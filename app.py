@@ -1,16 +1,13 @@
 from flask import Flask
-from controllers import health_check
+from controllers import (health_check, sign_up)
 
 app = Flask(__name__)
 
 route_list = [
 
-    ['GET', '/health', health_check]
+    ['GET', '/health', health_check],
+    ['POST', '/signup', sign_up]
     ]
-
-# @app.route('/')
-# def home():
-#     return "Hello, World!"
 
 def mount_routes():
     for route in route_list:
